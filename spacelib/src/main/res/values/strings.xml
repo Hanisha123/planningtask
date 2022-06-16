@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Space Navigation</string>
+    <string name="space_scrolling_view_behavior">com.luseen.spacenavigation.SpaceNavigationViewBehavior</string>
+
+    <string-array name="array_name">
+        <item>Brand Name</item>
+        <item>GK Hair</item>
+        <item>Tabolli</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="array_name_department">
+        <item>Department</item>
+        <item>Management</item>
+        <item>IT</item>
+        <item>Marketing</item>
+        <item>Accounts</item>
+        <item>MIS</item>
+        <item>HR</item>
+        <item>Sales</item>
+        <item>Admin</item>
+        <item>Technicals</item>
+        <item>Logistics</item>
+        <item>CRM</item>
+    </string-array>
+
+    <string-array name="array_name_assigntoemployee">
+        <item>Choose Employee</item>
+        <item>Employee1</item>
+        <item>Employee2</item>
+        <item>Employee3</item>
+        <item>Employee4</item>
+        <item>Employee5</item>
+        <item>Employee6</item>
+        <item>Employee7</item>
+        <item>Employee8</item>
+    </string-array>
+</resources>

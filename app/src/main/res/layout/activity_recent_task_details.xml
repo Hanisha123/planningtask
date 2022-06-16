@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.NoActionBar.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <include layout="@layout/recenttaskactivitydetails" />
+
+   <!-- <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_email" />-->
+
+    <!--Main FAB (Center FAB) Linear Layout-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <!-- <include layout="@layout/content_test" />-->
+            <!--View for Center FAB-->
+            <View
+                android:id="@+id/fabBGLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#C3ECECEC"
+                android:visibility="gone"/>
+            <LinearLayout
+                android:id="@+id/fabLayout_reopen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/standard_12"
+                android:clipToPadding="false"
+                app:layout_behavior="com.example.taskplannernew.utils.MoveUpwardBehavior"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/standard_23"
+                android:layout_gravity="bottom|right"
+                android:visibility="gone">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:padding="@dimen/_3sdp"
+                    android:background="@drawable/rounded_fab">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Reopen "
+                        android:textColor="@color/white"
+                        android:layout_alignParentRight="true"
+                        android:padding="1dp"/>
+                </LinearLayout>
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_reopen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/card_pencil"
+                    app:fabSize="mini"
+                    tools:ignore="VectorDrawableCompat" />
+
+            </LinearLayout>
+    <LinearLayout
+        android:id="@+id/fabLayout_approve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/standard_12"
+        android:clipToPadding="false"
+        app:layout_behavior="com.example.taskplannernew.utils.MoveUpwardBehavior"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/standard_23"
+        android:layout_gravity="bottom|right"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:padding="@dimen/_3sdp"
+            android:background="@drawable/rounded_fab">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Approve "
+                android:textColor="@color/white"
+                android:layout_alignParentRight="true"
+                android:padding="1dp"/>
+        </LinearLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_approve"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/card_pencil"
+            app:fabSize="mini"
+            tools:ignore="VectorDrawableCompat" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/fabLayout_addactivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/standard_12"
+        android:clipToPadding="false"
+        android:gravity="center_vertical"
+        app:layout_behavior="com.example.taskplannernew.utils.MoveUpwardBehavior"
+        android:layout_marginBottom="@dimen/standard_55"
+        android:layout_gravity="bottom|right"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:padding="@dimen/_3sdp"
+            android:background="@drawable/rounded_fab">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Add Activity "
+                android:textColor="@color/white"
+                android:layout_alignParentRight="true"
+                android:padding="1dp"
+                />
+        </LinearLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fab_addactivity"
+            app:srcCompat="@drawable/three_dots"
+            app:fabSize="mini"
+            tools:ignore="VectorDrawableCompat"
+            android:layout_weight="3"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:clipToPadding="false"
+        app:layout_behavior="com.example.taskplannernew.utils.MoveUpwardBehavior"
+        android:padding="5dp"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:layout_gravity="bottom|end"
+        android:id="@+id/fabbutton">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:gravity="center_vertical"
+            app:backgroundTint="@color/colorPrimary"
+            app:fabSize="normal"
+            app:srcCompat="@drawable/add_icon"
+            tools:ignore="VectorDrawableCompat"
+            app:fabAlignmentMode="center"
+            />
+    </LinearLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!-- Action Bar-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorAccent"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <TextView
+                    android:id="@+id/heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:text="RECENT TASK DETAILS"
+                    android:textColor="@color/white_color"
+                    android:textSize="14dp" />
+
+                <ImageView
+                    android:id="@+id/logout_btn"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/logout"
+                    android:visibility="gone"
+
+                    />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical">
+           <ScrollView
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <!--Task Detail Layout-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/greycolor"
+                android:gravity="center"
+                android:elevation="4dp"
+                app:cardCornerRadius="3dp"
+                app:cardUseCompatPadding="true"
+                android:outlineSpotShadowColor="@color/card_shadow"
+                >
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:padding="@dimen/_5sdp">
+                    <!--1st linear layout-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Task Details"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:layout_gravity="center"
+                            android:textSize="@dimen/_14sdp"
+                            android:padding="5dp"
+                            android:fontFamily="@font/gothambook"
+                            android:visibility="gone"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/colorPrimary"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Subject"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_gravity="center"
+                            android:textSize="@dimen/_12sdp"
+                            android:padding="5dp"
+                            android:fontFamily="@font/gothambook"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="end">
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/subject_detail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="subject"
+                                android:gravity="end"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/_12sdp"
+                                android:padding="5dp"
+                                android:fontFamily="@font/gothambook"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="From Date"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_gravity="center"
+                            android:textSize="@dimen/_12sdp"
+                            android:padding="5dp"
+                            android:fontFamily="@font/gothambook"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="end">
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/fromdate_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="fromdate"
+                                android:gravity="end"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/_12sdp"
+                                android:padding="5dp"
+                                android:fontFamily="@font/gothambook"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ToDate"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_gravity="center"
+                            android:textSize="@dimen/_12sdp"
+                            android:padding="5dp"
+                            android:fontFamily="@font/gothambook"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="end">
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/todate_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="todate"
+                                android:gravity="end"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/_12sdp"
+                                android:padding="5dp"
+                                android:fontFamily="@font/gothambook"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Assigned By"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_gravity="center"
+                            android:textSize="@dimen/_12sdp"
+                            android:padding="5dp"
+                            android:fontFamily="@font/gothambook"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="end">
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/assignedby_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="assignby"
+                                android:gravity="end"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/_12sdp"
+                                android:padding="5dp"
+                                android:fontFamily="@font/gothambook"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Assigned To"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_gravity="center"
+                            android:textSize="@dimen/_12sdp"
+                            android:padding="5dp"
+                            android:fontFamily="@font/gothambook"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="end">
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/assignto_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="assignto"
+                                android:gravity="end"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/_12sdp"
+                                android:padding="5dp"
+                                android:fontFamily="@font/gothambook"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Brand"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_gravity="center"
+                            android:textSize="@dimen/_12sdp"
+                            android:padding="5dp"
+                            android:fontFamily="@font/gothambook"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="end">
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/brand_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="brand"
+                                android:gravity="end"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/_12sdp"
+                                android:padding="5dp"
+                                android:fontFamily="@font/gothambook"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Task Status"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_gravity="center"
+                            android:textSize="@dimen/_12sdp"
+                            android:padding="5dp"
+                            android:fontFamily="@font/gothambook"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="end">
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/task_status"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="taskstatus"
+                                android:gravity="end"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/_12sdp"
+                                android:padding="5dp"
+                                android:fontFamily="@font/gothambook"
+                                android:autoLink="web"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Filename"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_gravity="center"
+                            android:textSize="@dimen/_12sdp"
+                            android:padding="5dp"
+                            android:fontFamily="@font/gothambook"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="end">
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/filename_detail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="filename"
+                                android:gravity="end"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/_12sdp"
+                                android:padding="5dp"
+                                android:fontFamily="@font/gothambook"
+                                android:autoLink="web"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Description"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_gravity="center"
+                            android:textSize="@dimen/_12sdp"
+                            android:padding="5dp"
+                            android:fontFamily="@font/gothambook"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="end">
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/description_detail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="description"
+                                android:gravity="end"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/_10sdp"
+                                android:padding="5dp"
+                                android:fontFamily="@font/gothambook"
+                                android:autoLink="web"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+                <!--End of Task Detail Layout-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/gray"
+                android:padding="@dimen/_5sdp"
+                android:visibility="gone"/>
+
+            <!--Start of All Activities Layout-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:nestedScrollingEnabled="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All Activities"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/_14sdp"
+                    android:padding="5dp"
+                    android:fontFamily="@font/gothambook"
+                    android:visibility="gone"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary"
+                    android:padding="@dimen/_5sdp"
+                    android:visibility="gone"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="NO DATA FOUND"
+                    android:textSize="@dimen/_25sdp"
+                    android:textColor="@color/black"
+                    android:visibility="gone"
+                    android:id="@+id/nodata_found"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_marginBottom="4dp"
+                    android:id="@+id/recent_task_rv"
+                   />
+            </LinearLayout>
+
+
+        </LinearLayout>
+           </ScrollView>
+
+       </LinearLayout>
+
+
+
+        <!--End of FAB for Add Activity-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <!--Start of FAB for Add Activity-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <!--End of All Activities Layout-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="bottom"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/reassign_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center"
+                        android:padding="@dimen/_10sdp"
+                        android:text="RE-ASSIGN"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                    <TextView
+                        android:id="@+id/changetat_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center"
+                        android:padding="@dimen/_10sdp"
+                        android:text="CHANGE TAT"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
+
+

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!-- Action Bar-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorAccent"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <TextView
+                    android:id="@+id/heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="TASK PLANNER"
+                    android:textColor="@color/white_color"
+                    android:textSize="14dp" />
+
+                <ImageView
+                    android:id="@+id/logout_btn"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    app:srcCompat="@drawable/logout"
+                    android:visibility="gone"
+
+                    />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <!-- Main Relative Layout-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- Recyclerview Layout Included-->
+
+        <FrameLayout
+            android:id="@+id/main_layout_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </FrameLayout>
+        <!-- FrameLayout for bottom nav view-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/main_layout">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom">
+                <com.luseen.spacenavigation.SpaceNavigationView
+                    android:id="@+id/space"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    app:active_item_color="@color/colorAccent"
+                    app:centre_button_color="@color/colorAccent"
+                    app:centre_button_icon="@drawable/add_icon"
+                    app:inactive_item_color="#00000000"
+                    app:space_background_color="#F5F5F5"
+                    app:space_item_icon_only_size="@dimen/space_item_icon_only_size"
+                    app:space_item_icon_size="@dimen/space_item_icon_default_size"
+                    app:space_item_text_size="@dimen/space_item_text_default_size" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true">
+                    <androidx.coordinatorlayout.widget.CoordinatorLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                       <!-- <include layout="@layout/content_test" />-->
+                        <!--View for Center FAB-->
+                        <View
+                            android:id="@+id/fabBGLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#C3ECECEC"
+                            android:visibility="gone"/>
+                        <!--Todo Linear Layout-->
+                        <LinearLayout
+                            android:id="@+id/fabLayout1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginRight="@dimen/standard_23"
+                            android:padding="@dimen/standard_12"
+                            android:clipToPadding="false"
+                            app:layout_behavior="com.example.taskplannernew.utils.MoveUpwardBehavior"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="@dimen/standard_23"
+                            android:layout_gravity="bottom|center"
+                            android:visibility="gone">
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:id="@+id/fab1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="68dp"
+                                app:srcCompat="@drawable/card_pencil"
+                                app:fabSize="mini"
+                                tools:ignore="VectorDrawableCompat" />
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:padding="@dimen/_3sdp"
+                                android:background="@drawable/rounded_fab"
+                                >
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" Todo "
+                                    android:textColor="@color/white"
+                                    android:layout_alignParentRight="true"
+                                    android:padding="1dp"
+                                    android:gravity="center"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!--Assign Task Linear Layout-->
+                        <LinearLayout
+                            android:id="@+id/fabLayout2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/standard_12"
+                            android:clipToPadding="false"
+                            android:layout_marginRight="@dimen/standard_23"
+                            android:gravity="center_vertical"
+                            app:layout_behavior="com.example.taskplannernew.utils.MoveUpwardBehavior"
+                            android:layout_marginBottom="@dimen/standard_23"
+                            android:layout_gravity="bottom|center"
+                            android:visibility="gone">
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/fab2"
+                                android:layout_marginLeft="110dp"
+                                app:srcCompat="@drawable/three_dots"
+                                app:fabSize="mini"
+                                tools:ignore="VectorDrawableCompat"
+                                android:layout_weight="3"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:padding="@dimen/_3sdp"
+                                android:background="@drawable/rounded_fab">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Assign Task"
+                                    android:textColor="@color/white"
+                                    android:layout_alignParentRight="true"
+                                    android:padding="1dp"
+                                    android:gravity="center"
+                                    />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <!--Main FAB (Center FAB) Linear Layout-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:clipToPadding="false"
+                            app:layout_behavior="com.example.taskplannernew.utils.MoveUpwardBehavior"
+                            android:padding="5dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_gravity="bottom|center">
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:id="@+id/fab"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|center"
+                                android:gravity="center_vertical"
+                                app:backgroundTint="@color/colorPrimary"
+                                app:fabSize="normal"
+                                app:srcCompat="@drawable/add_icon"
+                                tools:ignore="VectorDrawableCompat"
+                                app:fabAlignmentMode="center"
+                                />
+                        </LinearLayout>
+
+
+
+                        <View
+                            android:id="@+id/fabBGLayoutCalendar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#C3ECECEC"
+                            android:visibility="gone"/>
+                        <!--Todo Linear Layout-->
+                        <LinearLayout
+                            android:id="@+id/fabLayout_todocalendar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginRight="@dimen/_65sdp"
+                            android:padding="@dimen/standard_12"
+                            android:clipToPadding="false"
+                            app:layout_behavior="com.example.taskplannernew.utils.MoveUpwardBehavior"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="@dimen/standard_23"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:padding="@dimen/_3sdp"
+                                android:background="@drawable/rounded_fab">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Todo Calendar"
+                                    android:textColor="@color/white"
+                                    android:layout_alignParentRight="true"
+                                    android:padding="1dp"/>
+                            </LinearLayout>
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:id="@+id/fab_todocalendar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/calendar"
+                                app:fabSize="mini"
+                                tools:ignore="VectorDrawableCompat" />
+
+                        </LinearLayout>
+                        <!--Assign Task CalendarLinear Layout-->
+                        <LinearLayout
+                            android:id="@+id/fabLayout_assigntaskcalendar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/standard_12"
+                            android:clipToPadding="false"
+                            android:layout_marginRight="@dimen/_65sdp"
+                            android:gravity="center_vertical"
+                            app:layout_behavior="com.example.taskplannernew.utils.MoveUpwardBehavior"
+                            android:layout_marginBottom="@dimen/standard_23"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:padding="@dimen/_3sdp"
+                                android:background="@drawable/rounded_fab">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" Assign Task Calendar "
+                                    android:textColor="@color/white"
+                                    android:layout_alignParentRight="true"
+                                    android:padding="1dp"
+                                    />
+                            </LinearLayout>
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/fab_assigntaskcalendar"
+                                app:srcCompat="@drawable/calendar"
+                                app:fabSize="mini"
+                                tools:ignore="VectorDrawableCompat"
+                                android:layout_weight="3"/>
+
+                        </LinearLayout>
+                        <!--Main FAB (Calenadr FAB) Linear Layout-->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:clipToPadding="false"
+                            app:layout_behavior="com.example.taskplannernew.utils.MoveUpwardBehavior"
+                            android:padding="5dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_gravity="bottom|right">
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/calendar_fab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="@dimen/_74sdp"
+                                android:layout_marginBottom="@dimen/_2sdp"
+                                android:background="@drawable/calendar_black"
+                                android:padding="@dimen/_2sdp"
+                                />
+                        </LinearLayout>
+
+                    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                    <!--This FAB has no use , it just for designing set up-->
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/fab21"
+                        style="@style/Widget.MaterialComponents.FloatingActionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:backgroundTint="@color/card_color_one"
+                        app:elevation="10dp"
+                        app:srcCompat="@drawable/ic_arrow_left"
+                        app:tint="@color/colorPrimary"
+                        app:layout_anchorGravity="bottom|center"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </FrameLayout>
+
+    </RelativeLayout>
+
+
+    <!--  </LinearLayout>-->
+</LinearLayout>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.AssignTask"
+    android:layout_marginBottom="70dp">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
+
+      <ScrollView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:padding="@dimen/_20sdp">
+                <!-- TaskSubject-->
+              <androidx.appcompat.widget.AppCompatTextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Task Subject"
+                  android:fontFamily="@font/gothambook"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorAccent"
+                  android:textSize="@dimen/text_size_big"
+                  />
+              <androidx.appcompat.widget.AppCompatTextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="5dp"
+                  android:fontFamily="@font/gothambook"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:textSize="@dimen/text_size_big"
+                  android:id="@+id/task_subject"
+                  />
+              <!-- StartDate-->
+              <androidx.appcompat.widget.AppCompatTextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Start Date"
+                  android:layout_marginTop="@dimen/_10sdp"
+                  android:fontFamily="@font/gothambook"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorAccent"
+                  android:textSize="@dimen/text_size_big"
+                  />
+              <androidx.appcompat.widget.AppCompatTextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="5dp"
+                  android:fontFamily="@font/gothambook"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:textSize="@dimen/text_size_big"
+                  android:id="@+id/start_date"
+                  />
+              <!-- EndDate-->
+              <androidx.appcompat.widget.AppCompatTextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="End Date"
+                  android:layout_marginTop="@dimen/_10sdp"
+                  android:fontFamily="@font/gothambook"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorAccent"
+                  android:textSize="@dimen/text_size_big"
+                  />
+              <androidx.appcompat.widget.AppCompatTextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="5dp"
+                  android:fontFamily="@font/gothambook"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:textSize="@dimen/text_size_big"
+                  android:id="@+id/end_date"
+                  />
+
+              <!-- Note -->
+              <androidx.appcompat.widget.AppCompatTextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Note"
+                  android:layout_marginTop="@dimen/_10sdp"
+                  android:fontFamily="@font/gothambook"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorAccent"
+                  android:textSize="@dimen/text_size_big"
+                  />
+
+              <androidx.appcompat.widget.AppCompatEditText
+                  android:layout_width="match_parent"
+                  android:gravity="top"
+                  android:layout_height="150dp"
+                  android:hint="Write Your Comment"
+                  android:layout_marginTop="@dimen/_5sdp"
+                  android:fontFamily="@font/gothambook"
+                  android:background="@drawable/button_rounda"
+                  android:id="@+id/comment_changetat"/>
+
+              <!--Updated Date-->
+              <androidx.appcompat.widget.AppCompatTextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="From"
+                  android:layout_marginTop="@dimen/_10sdp"
+                  android:fontFamily="@font/gothambook"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorAccent"
+                  android:textSize="@dimen/text_size_big"
+                  />
+
+              <androidx.appcompat.widget.AppCompatEditText
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:drawableRight="@drawable/calendar_image1"
+                  android:hint="DD-MM-YYYY"
+                  android:id="@+id/fromDateEtxt"/>
+
+              <!-- Todate-->
+              <androidx.appcompat.widget.AppCompatTextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="To"
+                  android:fontFamily="@font/gothambook"
+                  android:textStyle="bold"
+                  android:textColor="@color/colorAccent"
+                  android:textSize="@dimen/text_size_big"
+                  android:visibility="gone"/>
+              <androidx.appcompat.widget.AppCompatEditText
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:drawableRight="@drawable/calendar_image1"
+                  android:hint="DD-MM-YYYY"
+                  android:id="@+id/toDateEtxt"
+                  android:visibility="gone"/>
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:layout_marginTop="@dimen/_10sdp"
+                  >
+                  <androidx.appcompat.widget.AppCompatButton
+                      android:id="@+id/btn_updatetat"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:background="@drawable/rounded_button"
+                      android:textColor="#fff"
+                      android:padding="12dp"
+                      android:text="Submit"
+                      android:layout_gravity="center"/>
+              </LinearLayout>
+          </LinearLayout>
+      </ScrollView>
+  </LinearLayout>
+
+</FrameLayout>

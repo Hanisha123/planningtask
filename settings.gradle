@@ -1,0 +1,2 @@
+include ':app', ':spacelib', ':library', ':librarymul'
+rootProject.name='TaskPlannerNew'
